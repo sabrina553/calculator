@@ -3,7 +3,7 @@ package Calculator;
 import java.util.Scanner;
 
 public class Cal {
-    public void Cal(){
+    public void run(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Type an equation: ");
         float a = scan.nextFloat();
@@ -24,7 +24,7 @@ public class Cal {
             case "-":
                 return subtract(a,b);
         }
-        return 0;
+        throw new IllegalArgumentException("Unknown operator: " + operator);
     }
 
     private float add(float a, float b){
